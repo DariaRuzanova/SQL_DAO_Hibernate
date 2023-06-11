@@ -21,14 +21,14 @@ public class PersonService {
     }
 
     public List<Persons> getPersonByCity(String city) {
-        return personsCrudRepository.findAllByCityOfLiving(city);
+        return personsCrudRepository.findCityOfLiving(city);
     }
 
     public List<Persons> getPersonByAge(int age) {
-        return personsCrudRepository.findByPersonKey_AgeIsLessThanOrderByPersonKeyAgeAsc(age);
+        return personsCrudRepository.findByAge(age);
     }
 
     public Optional<Persons> getPersonByNameAndSurname(String name, String surname) {
-        return personsCrudRepository.findByPersonKey_NameAndPersonKey_Surname(name, surname);
+        return personsCrudRepository.findByNameAndSurname(name,surname);
     }
 }
